@@ -4,15 +4,15 @@ import * as JSM from 'jingle'
 import { createRegistry } from 'jxt'
 import Log from '../util/Log'
 import UUID from '../util/UUID'
-import JID from '@src/JID';
+import JID from '@/xmpp/JID';
 import { IJID } from '../JID.interface'
-import { VideoDialog } from '../ui/VideoDialog'
+// import { VideoDialog } from '../ui/VideoDialog'
 import JingleSession from '../JingleSession'
 import JingleAbstractSession from '../JingleAbstractSession'
-import JingleMediaSession from '@src/JingleMediaSession';
-import { IOTalkJingleMediaSession } from '@vendor/Jingle.interface';
-import IceServers, { ICEServer } from '@src/IceServers';
-import Client from '@src/Client';
+import JingleMediaSession from '@/xmpp/JingleMediaSession';
+import { IOTalkJingleMediaSession } from '@/xmpp/vendor/Jingle.interface';
+import IceServers, { ICEServer } from '@/xmpp/IceServers';
+import Client from '@/xmpp/Client';
 
 let jxt = createRegistry();
 jxt.use(require('jxt-xmpp-types'));
@@ -29,7 +29,8 @@ export default class JingleHandler {
 
    protected manager: JSM;
 
-   protected static videoDialog: VideoDialog;
+   // protected static videoDialog: VideoDialog;
+   protected static videoDialog: any;
 
    protected static instances: JingleHandler[] = [];
 
@@ -167,11 +168,11 @@ export default class JingleHandler {
       });
    }
 
-   public static getVideoDialog(): VideoDialog {
-      if (!JingleHandler.videoDialog || !JingleHandler.videoDialog.isReady()) {
-         JingleHandler.videoDialog = new VideoDialog();
-      }
+   // public static getVideoDialog(): VideoDialog {
+   //    if (!JingleHandler.videoDialog || !JingleHandler.videoDialog.isReady()) {
+   //       JingleHandler.videoDialog = new VideoDialog();
+   //    }
 
-      return JingleHandler.videoDialog;
-   }
+   //    return JingleHandler.videoDialog;
+   // }
 }

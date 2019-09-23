@@ -149,10 +149,10 @@ export default class Form {
       return formElement;
    }
 
-   public getValues(key: string): string[] {
+   public getValues(key: string): void{ //string[] 
       let fields = this.fields.filter(field => field.getName() === key);
 
-      return fields.length > 0 ? fields[0].getValues() : undefined;
+      // return fields.length > 0 ? fields[0].getValues() : undefined;
    }
 
    public getFields(): Field[] {

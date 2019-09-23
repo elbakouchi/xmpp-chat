@@ -14,7 +14,7 @@ import HookRepository from './util/HookRepository'
 import Options from './Options'
 import UUID from './util/UUID'
 import Pipe from './util/Pipe'
-import ChatWindow from '@ui/ChatWindow';
+// import ChatWindow from '@ui/ChatWindow';
 import { IJID } from './JID.interface';
 import { IContact } from './Contact.interface';
 import RosterContactProvider from './RosterContactProvider';
@@ -182,21 +182,21 @@ export default class Account {
       this.hookRepository.registerHook('connection', func);
    }
 
-   public triggerChatWindowInitializedHook = (chatWindow: ChatWindow, contact: Contact) => {
-      this.hookRepository.trigger('chatWindowInitialized', chatWindow, contact);
-   }
+   // public triggerChatWindowInitializedHook = (chatWindow: ChatWindow, contact: Contact) => {
+   //    this.hookRepository.trigger('chatWindowInitialized', chatWindow, contact);
+   // }
 
-   public registerChatWindowInitializedHook = (func: (chatWindow?: ChatWindow, contact?: Contact) => void) => {
-      this.hookRepository.registerHook('chatWindowInitialized', func);
-   }
+   // public registerChatWindowInitializedHook = (func: (chatWindow?: ChatWindow, contact?: Contact) => void) => {
+   //    this.hookRepository.registerHook('chatWindowInitialized', func);
+   // }
 
-   public triggerChatWindowClearedHook = (chatWindow: ChatWindow, contact: Contact) => {
-      this.hookRepository.trigger('chatWindowCleared', chatWindow, contact);
-   }
+   // public triggerChatWindowClearedHook = (chatWindow: ChatWindow, contact: Contact) => {
+   //    this.hookRepository.trigger('chatWindowCleared', chatWindow, contact);
+   // }
 
-   public registerChatWindowClearedHook = (func: (chatWindow?: ChatWindow, contact?: Contact) => void) => {
-      this.hookRepository.registerHook('chatWindowCleared', func);
-   }
+   // public registerChatWindowClearedHook = (func: (chatWindow?: ChatWindow, contact?: Contact) => void) => {
+   //    this.hookRepository.registerHook('chatWindowCleared', func);
+   // }
 
    public getContactManager(): ContactManager {
       if (!this.contactManager) {

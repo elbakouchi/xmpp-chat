@@ -1,5 +1,6 @@
-import { IConnection } from '@connection/Connection.interface';
-import Account from '@src/Account';
+import { IConnection } from '@/xmpp/connection/Connection.interface';
+import Account from '@/xmpp/Account';
+import {Strophe} from 'strophe.js'
 
 type Send = (stanzaElement: Element | Strophe.Builder) => void;
 type SendIQ = (stanzaElement: Element | Strophe.Builder) => Promise<Element>;

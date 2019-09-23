@@ -6,12 +6,14 @@ import Log from './util/Log'
 import Options from './Options'
 import PresenceController from './PresenceController'
 import PageVisibility from './PageVisibility'
-import ChatWindowList from './ui/ChatWindowList';
+// import ChatWindowList from './ui/ChatWindowList';
 import AccountManager from './AccountManager';
-import Translation from '@util/Translation';
+import Translation from '@/xmpp/util/Translation';
 import Migration from './Migration';
 
 export default class Client {
+   private static __VERSION__ = '0.1.0';
+
    private static storage: Storage;
 
    private static noticeManager: NoticeManager;
@@ -54,7 +56,7 @@ export default class Client {
    }
 
    public static getVersion(): string {
-      return __VERSION__;
+      return this.__VERSION__;
    }
 
    public static addPlugin(Plugin: IPlugin) {
@@ -107,8 +109,8 @@ export default class Client {
       return Client.presenceController;
    }
 
-   public static getChatWindowList(): ChatWindowList {
-      return ChatWindowList.get();
+   public static getChatWindowList(): any { //ChatWindowList
+      // return ChatWindowList.get();
    }
 
    public static getOptions(): Options {

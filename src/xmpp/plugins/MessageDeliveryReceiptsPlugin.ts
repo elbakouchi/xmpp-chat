@@ -4,8 +4,9 @@ import { AbstractPlugin } from '../plugin/AbstractPlugin'
 import PluginAPI from '../plugin/PluginAPI'
 import * as Namespace from '../connection/xmpp/namespace'
 import { $msg } from '../vendor/Strophe'
-import { IContact } from '@src/Contact.interface';
-import Translation from '@util/Translation';
+import { IContact } from '@/xmpp/Contact.interface';
+import Translation from '@/xmpp/util/Translation';
+import {Strophe} from 'strophe.js'
 
 /**
  * XEP-0184: Message Delivery Receipts

@@ -19,5 +19,13 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
+    {
+      path: '/chat',
+      name: 'chat',
+      // route level code-splitting
+      // this generates a separate chunk (chat.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "chat" */ './views/Chat.vue'),
+    },
   ],
 });

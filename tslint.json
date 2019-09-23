@@ -5,10 +5,16 @@
   ],
   "linterOptions": {
     "exclude": [
-      "node_modules/**"
+      "node_modules/**",
+       "src/xmpp/**"
     ]
   },
   "rules": {
+    "trailing-comma": false ,
+    "trailing-whitespace": false ,
+    "whitespace": false ,
+    "semicolon": false,
+    "typedef-whitespace": false,
     "indent": [true, "spaces", 2],
     "interface-name": false,
     "no-consecutive-blank-lines": false,

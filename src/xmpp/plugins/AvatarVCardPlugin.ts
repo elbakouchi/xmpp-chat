@@ -2,11 +2,11 @@ import { AbstractPlugin } from '../plugin/AbstractPlugin'
 import PluginAPI from '../plugin/PluginAPI'
 import Contact from '../Contact'
 import Avatar from '../Avatar'
-import AvatarUI from '../ui/AvatarSet'
+// import AvatarUI from '../ui/AvatarSet'
 import JID from '../JID'
 import Log from '../util/Log';
-import { ContactType } from '@src/Contact.interface';
-import Translation from '@util/Translation';
+import { ContactType } from '@/xmpp/Contact.interface';
+import Translation from '@/xmpp/util/Translation';
 
 /**
  * XEP-0153: vCard-Based Avatars
@@ -68,7 +68,7 @@ export default class AvatarVCardPlugin extends AbstractPlugin {
                return true;
             }
 
-            let avatarUI = AvatarUI.get(contact);
+            let avatarUI =  undefined ; //AvatarUI.get(contact);
             avatarUI.reload();
          }
       }

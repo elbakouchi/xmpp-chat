@@ -1,6 +1,6 @@
-import incomingMessageSoundFile = require('../sound/incomingMessage.mp3');
-import incomingCallSoundFile = require('../sound/Rotary-Phone6.mp3');
-import noticeSoundFile = require('../sound/Ping1.mp3');
+const incomingMessageSoundFile = require('c:/hamza/projects/joblinker-xmpp2/src/sound/incomingMessage.mp3');
+const incomingCallSoundFile = require('c:/hamza/projects/joblinker-xmpp2/src/sound/Rotary-Phone6.mp3');
+const noticeSoundFile = require('c:/hamza/projects/joblinker-xmpp2/src/sound/Ping1.mp3');
 
 export let NOTIFICATION_DEFAULT = 'default';
 export let NOTIFICATION_GRANTED = 'granted';

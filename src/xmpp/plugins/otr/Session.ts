@@ -1,5 +1,5 @@
 import Log from '../../util/Log'
-import { IContact } from '@src/Contact.interface';
+import { IContact } from '@/xmpp/Contact.interface';
 import Message from '../../Message'
 import { DIRECTION } from '../../Message.interface'
 import Translation from '../../util/Translation'
@@ -9,8 +9,8 @@ import { EncryptionState } from '../../plugin/AbstractPlugin'
 import Storage from '../../Storage'
 import PersistentMap from '../../util/PersistentMap'
 import OTRPlugin from './Plugin';
-import { IConnection } from '@connection/Connection.interface';
-import VerificationDialog from '@ui/dialogs/verification';
+import { IConnection } from '@/xmpp/connection/Connection.interface';
+// import VerificationDialog from '@ui/dialogs/verification';
 
 //@REVIEW
 interface IOTR {
@@ -39,7 +39,7 @@ export default class Session {
 
    private ourPayloadId: number;
 
-   private verificationDialog: VerificationDialog;
+   private verificationDialog: any; //VerificationDialog
 
    constructor(private peer: IContact, private key: DSA, private storage: Storage, private connection: IConnection) {
 
@@ -376,7 +376,7 @@ export default class Session {
    private openVerificationDialog() {
       this.closeVerificationDialog();
 
-      this.verificationDialog = new VerificationDialog(this.peer, this);
+      this.verificationDialog = undefined; //new VerificationDialog(this.peer, this);
 
       return this.verificationDialog;
    }

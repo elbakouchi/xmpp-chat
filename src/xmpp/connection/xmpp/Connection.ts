@@ -7,6 +7,7 @@ import Account from '../../Account'
 import { AbstractConnection, Presence, STANZA_IQ_KEY, STANZA_KEY } from '../AbstractConnection'
 import XMPPJingleHandler from './JingleHandler'
 import Client from '../../Client'
+import { Strophe } from 'strophe.js'
 
 export default class XMPPConnection extends AbstractConnection implements IConnection {
    private handler: XMPPHandler;

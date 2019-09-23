@@ -5,7 +5,7 @@ import EncryptedDeviceMessage from '../model/EncryptedDeviceMessage';
 import { SessionCipher } from '../vendor/SessionCipher';
 import { SessionBuilder } from '../vendor/SessionBuilder';
 import Bundle from './Bundle';
-import Log from '@util/Log';
+import Log from '@/xmpp/util/Log';
 
 export default class Session {
    private sessionCipher;

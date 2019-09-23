@@ -1,8 +1,8 @@
 import Translation from '../../../../util/Translation'
 import MultiUserContact from '../../../../MultiUserContact'
 import MultiUserPresenceProcessor from './PresenceProcessor'
-import showSelectionDialog from '../../../../ui/dialogs/selection'
-import showRoomConfigurationDialog, { CANCELED } from '../../../../ui/dialogs/multiUserRoomConfiguration'
+// import showSelectionDialog from '../../../../ui/dialogs/selection'
+// import showRoomConfigurationDialog, { undefined } from '../../../../ui/dialogs/multiUserRoomConfiguration'
 
 //@TODO those status codes are partially transmitted through message stanzas
 // https://xmpp.org/extensions/xep-0045.html#registrar-statuscodes
@@ -67,8 +67,8 @@ export default class MultiUserStatusCodeHandler {
       }
 
       promise.then((stanza) => {
-         if (stanza === CANCELED) {
-            this.presenceHandler.inform(Translation.t('Configuration_canceled'));
+         if (stanza === undefined) { // CANCELED
+            this.presenceHandler.inform(Translation.t('Configuration_undefined'));
          }
       }).catch(() => {
 
@@ -135,29 +135,29 @@ export default class MultiUserStatusCodeHandler {
    }
 }
 
-function showInstantOrConfigurationDialog(multiUserContact: MultiUserContact) {
-   return new Promise((resolve, reject) => {
-      showSelectionDialog({
-         header: Translation.t('Room_creation') + ` (${multiUserContact.getName()})`,
-         message: Translation.t('Do_you_want_to_change_the_default_room_configuration'),
-         primary: {
-            label: Translation.t('Default'),
-            cb: () => {
-               multiUserContact.setRoomConfiguration(MultiUserContact.INSTANT_ROOMCONFIG);
+function showInstantOrConfigurationDialog(multiUserContact: any ) { // MultiUserContact
+   // return new Promise((resolve, reject) => {
+   //    showSelectionDialog({
+   //       header: Translation.t('Room_creation') + ` (${multiUserContact.getName()})`,
+   //       message: Translation.t('Do_you_want_to_change_the_default_room_configuration'),
+   //       primary: {
+   //          label: Translation.t('Default'),
+   //          cb: () => {
+   //             multiUserContact.setRoomConfiguration(MultiUserContact.INSTANT_ROOMCONFIG);
 
-               let instantRoomPromise = multiUserContact.createInstantRoom();
+   //             let instantRoomPromise = multiUserContact.createInstantRoom();
 
-               resolve(instantRoomPromise);
-            }
-         },
-         option: {
-            label: Translation.t('Change'),
-            cb: () => {
-               let roomConfigurationPromise = showRoomConfigurationDialog(multiUserContact);
+   //             resolve(instantRoomPromise);
+   //          }
+   //       },
+   //       option: {
+   //          label: Translation.t('Change'),
+   //          cb: () => {
+   //             let roomConfigurationPromise = showRoomConfigurationDialog(multiUserContact);
 
-               resolve(roomConfigurationPromise);
-            }
-         }
-      });
-   });
+   //             resolve(roomConfigurationPromise);
+   //          }
+   //       }
+   //    });
+   // });
 }

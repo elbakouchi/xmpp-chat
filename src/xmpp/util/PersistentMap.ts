@@ -1,6 +1,6 @@
 import IIdentifiable from '../Identifiable.interface'
 import InvalidParameterError from '../errors/InvalidParameterError';
-import IStorage from '@src/Storage.interface';
+import IStorage from '@/xmpp/Storage.interface';
 
 export default class PersistentMap {
 

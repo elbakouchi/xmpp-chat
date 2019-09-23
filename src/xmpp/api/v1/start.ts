@@ -1,6 +1,6 @@
 import Log from '../../util/Log'
 import Client from '../../Client'
-import * as UI from '../../ui/web'
+// import * as UI from '../../ui/web'
 import BaseError from '../../errors/BaseError'
 import InvalidParameterError from '../../errors/InvalidParameterError'
 import Account from '@/xmpp/Account';
@@ -39,7 +39,7 @@ export function start() {
 }
 
 function startUI() {
-   UI.init();
+   // UI.init();
 
    return Promise.resolve();
 }

@@ -1,4 +1,4 @@
-import ByteBuffer = require('bytebuffer')
+const ByteBuffer = require('bytebuffer')
 
 let ArrayBufferUtils = {
    concat: (a: ArrayBuffer, b: ArrayBuffer) => ByteBuffer.concat([a, b]).toArrayBuffer(),

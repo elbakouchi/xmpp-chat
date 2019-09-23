@@ -2,7 +2,7 @@ import Log from './util/Log'
 import UUID from './util/UUID'
 import PersistentMap from './util/PersistentMap'
 import Client from './Client'
-import beautifyBytes from './ui/util/ByteBeautifier'
+// import beautifyBytes from './ui/util/ByteBeautifier'
 
 export default class Attachment {
 
@@ -136,7 +136,8 @@ export default class Attachment {
    public getElement() {
       let type = this.getMimeType();
       let name = this.getName();
-      let size = beautifyBytes(this.getSize());
+      // let size = beautifyBytes(this.getSize());
+      let size = this.getSize();
 
       let wrapperElement = $('<div>');
       wrapperElement.addClass('jsxc-attachment');

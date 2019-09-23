@@ -3,13 +3,14 @@ import { AbstractPlugin } from '../../plugin/AbstractPlugin'
 import PluginAPI from '../../plugin/PluginAPI'
 import Message from '../../Message'
 import Contact from '../../Contact'
-import ChatWindow from '../../ui/ChatWindow'
+// import ChatWindow from '../../ui/ChatWindow'
 import Storage from '../../Storage'
 import Translation from '../../util/Translation'
 import * as Namespace from '@/xmpp/connection/xmpp/namespace'
 import ChatStateConnection from './ChatStateConnection'
 import ChatStateMachine from './ChatStateMachine'
 import { ContactType } from '@/xmpp/Contact.interface';
+import {Strophe} from 'strophe.js'
 
 /**
  * XEP-0085: Chat State Notifications
@@ -43,7 +44,7 @@ export default class ChatStatePlugin extends AbstractPlugin {
 
       pluginAPI.addPreSendMessageStanzaProcessor(this.preSendMessageStanzaProcessor)
 
-      pluginAPI.registerChatWindowInitializedHook((chatWindow: ChatWindow, contact: Contact) => {
+      pluginAPI.registerChatWindowInitializedHook((chatWindow: any, contact: Contact) => {
          if (contact.getType() === ContactType.CHAT) {
             new ChatStateMachine(this, chatWindow, contact);
          }

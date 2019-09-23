@@ -1,15 +1,15 @@
-import PEP from '@connection/services/PEP';
+import PEP from '@/xmpp/connection/services/PEP';
 import Address from '../vendor/Address';
 import { NS_BUNDLES, NS_BASE, NS_DEVICELIST, NUM_PRE_KEYS, MAX_PRE_KEY_ID } from '../util/Const'
 import Bundle from './Bundle';
-import Log from '@util/Log';
+import Log from '@/xmpp/util/Log';
 import IdentityKey from '../model/IdentityKey';
 import PreKey from '../model/PreKey';
 import SignedPreKey from '../model/SignedPreKey';
 import { KeyHelper } from '../vendor/KeyHelper';
 import Store from './Store';
 import { $build } from '../../../vendor/Strophe'
-import Random from '@util/Random';
+import Random from '@/xmpp/util/Random';
 
 export default class BundleManager {
    constructor(private pepService: PEP, private store: Store) {

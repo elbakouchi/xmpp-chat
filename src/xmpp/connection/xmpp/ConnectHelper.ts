@@ -5,7 +5,7 @@ import Client from '../../Client'
 import InvalidParameterError from '../../errors/InvalidParameterError'
 import ConnectionError from '../../errors/ConnectionError'
 import AuthenticationError from '../../errors/AuthenticationError'
-import UUID from '@util/UUID';
+import UUID from '@/xmpp/util/UUID';
 
 export function login(url: string, jid: string, sid: string, rid: string);
 export function login(url: string, jid: string, password: string);

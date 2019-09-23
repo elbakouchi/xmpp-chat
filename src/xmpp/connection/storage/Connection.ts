@@ -3,8 +3,9 @@ import { IConnection } from '../Connection.interface'
 import Log from '../../util/Log'
 import Account from '../../Account'
 import { AbstractConnection, STANZA_IQ_KEY, STANZA_KEY, STANZA_JINGLE_KEY } from '../AbstractConnection'
-import { Strophe } from '../../vendor/Strophe'
+// import { Strophe } from '@/xmpp/vendor/Strophe'
 import JingleHandler from '../JingleHandler'
+import {Strophe} from 'strophe.js'
 
 export default class StorageConnection extends AbstractConnection implements IConnection {
 

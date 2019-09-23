@@ -5,7 +5,7 @@ import { EncryptionState } from './plugin/AbstractPlugin'
 import ChatWindowController from './ChatWindowController'
 import Transcript from './Transcript'
 import Avatar from './Avatar'
-import ChatWindow from '@ui/ChatWindow';
+// import ChatWindow from '@ui/ChatWindow';
 import ContactProvider from './ContactProvider';
 import Account from './Account';
 import DiscoInfo from './DiscoInfo';
@@ -26,7 +26,7 @@ export enum ContactSubscription {
 export interface IContact {
    delete();
 
-   getChatWindow(): ChatWindow;
+   getChatWindow(): any; // ChatWindow
 
    getChatWindowController(): ChatWindowController;
 

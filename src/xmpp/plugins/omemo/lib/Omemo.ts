@@ -12,11 +12,14 @@ import { NS_BASE } from '../util/Const'
 import ArrayBufferUtils from '../util/ArrayBuffer'
 import * as AES from '../util/AES'
 import Device, { Trust } from './Device'
-import { Strophe } from '../../../vendor/Strophe'
+// import { Strophe } from 'strophe.js'
 import BundleManager from './BundleManager';
 import IdentityManager from './IdentityManager';
-import Translation from '@util/Translation';
-import Log from '@util/Log';
+import Translation from '@/xmpp/util/Translation';
+import Log from '@/xmpp/util/Log';
+// import {Strophe} from 'strophe'
+import {Strophe} from 'strophe.js'
+
 
 export default class Omemo {
    private store: Store;

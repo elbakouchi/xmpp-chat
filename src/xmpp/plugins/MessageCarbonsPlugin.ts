@@ -6,7 +6,7 @@ import { Status } from '../vendor/Strophe'
 import * as Namespace from '../connection/xmpp/namespace'
 import Translation from '../util/Translation'
 import { $iq } from '../vendor/Strophe'
-
+import {Strophe} from 'strophe'
 /**
  * XEP-0280: Message Carbons
  *

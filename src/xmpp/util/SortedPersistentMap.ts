@@ -1,4 +1,4 @@
-import IIdentifiable from '../Identifiable.interface'
+import IIdentifiable from '@/xmpp/Identifiable.interface'
 import Storage from '../Storage'
 import Log from '../util/Log'
 import InvalidParameterError from '../errors/InvalidParameterError'

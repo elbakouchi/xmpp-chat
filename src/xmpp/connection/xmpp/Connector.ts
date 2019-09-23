@@ -5,7 +5,7 @@ import JID from '../../JID'
 import * as ConnectHelper from './ConnectHelper'
 import StorageConnection from '../storage/Connection'
 import XMPPConnection from './Connection'
-import { Strophe } from '../../vendor/Strophe'
+import { Strophe } from 'strophe.js'
 import BaseError from '../../errors/BaseError'
 
 export enum TYPE { BOSH, WEBSOCKET };

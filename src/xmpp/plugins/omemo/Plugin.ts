@@ -4,11 +4,12 @@ import { EncryptionState } from '../../plugin/AbstractPlugin'
 import { IMessage } from '../../Message.interface'
 import { IContact, ContactType } from '../../Contact.interface'
 import Omemo from './lib/Omemo'
-import ChatWindow from '../../ui/ChatWindow'
+// import ChatWindow from '../../ui/ChatWindow'
 import { NS_BASE, NS_DEVICELIST } from './util/Const'
-import OmemoDevicesDialog from '../../ui/dialogs/omemoDevices'
+// import OmemoDevicesDialog from '../../ui/dialogs/omemoDevices'
 import { Trust } from './lib/Device';
-import Translation from '@util/Translation';
+import Translation from '@/xmpp/util/Translation';
+import {Strophe} from 'strophe.js'
 
 const MIN_VERSION = '4.0.0';
 const MAX_VERSION = '4.0.0';
@@ -41,7 +42,7 @@ export default class OMEMOPlugin extends EncryptionPlugin {
 
       pluginAPI.addAfterReceiveMessageProcessor(this.afterReceiveMessageProcessor);
 
-      pluginAPI.registerChatWindowInitializedHook((chatWindow: ChatWindow) => {
+      pluginAPI.registerChatWindowInitializedHook((chatWindow: any) => {
          if (chatWindow.getContact().getType() !== ContactType.CHAT) {
             return;
          }
@@ -54,7 +55,7 @@ export default class OMEMOPlugin extends EncryptionPlugin {
       this.getOmemo().prepare().then(() => {
          let peerContact = chatWindow.getContact();
 
-         OmemoDevicesDialog(peerContact, this.getOmemo());
+         // OmemoDevicesDialog(peerContact, this.getOmemo());
       });
    }
 

@@ -1,11 +1,11 @@
 import Log from '@/xmpp/util/Log'
 import Client from '@/xmpp/Client'
-import Roster from '@/xmpp/ui/Roster'
+// import Roster from '@/xmpp/ui/Roster'
 import { IPlugin } from '@/xmpp/plugin/AbstractPlugin'
 import FormWatcher, { SettingsCallback } from '../../FormWatcher'
 import { disconnect } from './disconnect';
 import Translation from '@/xmpp/util/Translation';
-import loginBox from '@ui/dialogs/loginBox';
+// import loginBox from '@ui/dialogs/loginBox';
 import Account from './Account';
 
 export { disconnect };
@@ -19,11 +19,11 @@ export function addPlugin(Plugin: IPlugin) {
 }
 
 export function addMenuEntry(options: { id: string, handler: (ev) => void, label: string | JQuery<HTMLElement>, icon?: string, offlineAvailable?: boolean }) {
-   Roster.get().addMenuEntry(options);
+   // Roster.get().addMenuEntry(options);
 }
 
 export function toggleRoster() {
-   Roster.get().toggle();
+   // Roster.get().toggle();
 }
 
 export function watchForm(formElement: JQuery, usernameElement: JQuery, passwordElement: JQuery, settingsCallback?: SettingsCallback) {
@@ -71,7 +71,7 @@ export function translate(str: string, param:any) {
 }
 
 export function showLoginBox(username?: string) {
-   loginBox(username);
+   // loginBox(username);
 }
 
 export function getAccount(uid: string) {

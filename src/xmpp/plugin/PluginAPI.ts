@@ -9,13 +9,14 @@ import Avatar from '../Avatar'
 import { IMessagePayload, DIRECTION, IMessage } from '../Message.interface'
 import { IPluginAPI } from './PluginAPI.interface'
 import { Logger } from '../util/Log'
-import ChatWindow from '@ui/ChatWindow';
-import ContactProvider from '@src/ContactProvider';
-import { IContact } from '@src/Contact.interface';
-import { IJID } from '@src/JID.interface';
-import MultiUserContact from '@src/MultiUserContact';
-import ContactManager from '@src/ContactManager';
-import IStorage from '@src/Storage.interface';
+// import ChatWindow from '@ui/ChatWindow';
+import ContactProvider from '@/xmpp/ContactProvider';
+import { IContact } from '@/xmpp/Contact.interface';
+import { IJID } from '@/xmpp/JID.interface';
+import MultiUserContact from '@/xmpp/MultiUserContact';
+import ContactManager from '@/xmpp/ContactManager';
+import IStorage from '@/xmpp/Storage.interface';
+import {Strophe} from 'strophe.js'
 
 export default class PluginAPI implements IPluginAPI {
    private storage: IStorage;
@@ -131,12 +132,12 @@ export default class PluginAPI implements IPluginAPI {
       return null;
    }
 
-   public registerChatWindowInitializedHook(hook: (chatWindow?: ChatWindow, contact?: Contact) => void) {
-      this.account.registerChatWindowInitializedHook(hook);
+   public registerChatWindowInitializedHook(hook: (chatWindow?: any, contact?: Contact) => void) {
+      // this.account.registerChatWindowInitializedHook(hook);
    }
 
-   public registerChatWindowClearedHook(hook: (chatWindow?: ChatWindow, contact?: Contact) => void) {
-      this.account.registerChatWindowClearedHook(hook);
+   public registerChatWindowClearedHook(hook: (chatWindow?: any, contact?: Contact) => void) {
+      // this.account.registerChatWindowClearedHook(hook);
    }
 
    public registerContactProvider(source: ContactProvider) {

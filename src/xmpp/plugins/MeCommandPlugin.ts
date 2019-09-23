@@ -1,8 +1,8 @@
 import { AbstractPlugin } from '../plugin/AbstractPlugin'
 import PluginAPI from '../plugin/PluginAPI'
 import Contact from '../Contact'
-import Translation from '@util/Translation';
-import { DIRECTION } from '@src/Message.interface';
+import Translation from '@/xmpp/util/Translation';
+import { DIRECTION } from '@/xmpp/Message.interface';
 
 /**
  * XEP-0245: The /me Command

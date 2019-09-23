@@ -2,7 +2,7 @@ import ChatStatePlugin from './ChatStatePlugin'
 import ChatStateConnection from './ChatStateConnection'
 import { STATE } from './State'
 import Storage from '../../Storage'
-import ChatWindow from '../../ui/ChatWindow'
+// import ChatWindow from '../../ui/ChatWindow'
 import Contact from '../../Contact'
 import * as Namespace from '../../connection/xmpp/namespace'
 
@@ -16,7 +16,7 @@ export default class ChatStateMachine {
    private composingTimeout;
    private id;
 
-   constructor(private plugin: ChatStatePlugin, private chatWindow: ChatWindow, private contact: Contact) {
+   constructor(private plugin: ChatStatePlugin, private chatWindow: any, private contact: Contact) {
       this.storage = plugin.getStorage();
       this.connection = plugin.getChatStateConnection();
       this.key = 'state:' + this.contact.getId();

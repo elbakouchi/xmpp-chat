@@ -7,11 +7,11 @@ import * as Namespace from '@/xmpp/connection/xmpp/namespace'
 import Attachment from '../../Attachment'
 import HttpUploadService from './HttpUploadService'
 import { IConnection } from '@/xmpp/connection/Connection.interface'
-import { $iq, Strophe } from '@/xmpp/vendor/Strophe'
+import { $iq } from '@/xmpp/vendor/Strophe'
 import Translation from '@/xmpp/util/Translation';
 import { IContact } from '@/xmpp/Contact.interface';
 import { IMessage } from '@/xmpp/Message.interface';
-
+import {Strophe} from 'strophe.js'
 /**
  * XEP-0363: HTTP File Upload
  *

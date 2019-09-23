@@ -1,10 +1,11 @@
-import { Strophe, $build, $iq } from '../../vendor/Strophe'
+import { $build, $iq } from '../../vendor/Strophe'
 import UUID from '../../util/UUID';
 import BaseError from '../../errors/BaseError';
 import Form from '../../connection/Form'
 import Translation from '../../util/Translation'
 import Log from '../../util/Log'
-import Dialog from '../../ui/Dialog'
+// import Dialog from '../../ui/Dialog'
+import {Strophe} from 'strophe.js'
 
 const NS_REGISTER = 'jabber:iq:register';
 const ALLOWED_FIELDS = ['username', 'nick', 'password', 'name', 'first', 'last', 'email', 'address', 'city', 'state', 'zip', 'phone', 'url', 'date'];
@@ -15,19 +16,19 @@ export function register(service: string, domain: string, callback?: (form: Form
 
 function defaultCallback(form: Form): Promise<Form> {
    let wrapper = $('<div>').append(form.toHTML());
-   let dialog = new Dialog(wrapper.html());
-   let dom = dialog.open();
-   let buttonElement = $('<button>');
-   buttonElement.addClass('jsxc-button jsxc-button--primary');
-   buttonElement.text(Translation.t('Register'));
-   buttonElement.appendTo(dom.find('form'));
+   // <let dialog = new Dialog(wrapper.html());
+   // let dom = dialog.open();
+   // let buttonElement = $('<button>');
+   // buttonElement.addClass('jsxc-button jsxc-button--primary');
+   // buttonElement.text(Translation.t('Register'));
+   // buttonElement.appendTo(dom.find('form'));
 
    return new Promise(resolve => {
-      dom.find('form').submit(function(ev) {
-         ev.preventDefault();
+      // dom.find('form').submit(function(ev) {
+      //    ev.preventDefault();
 
-         resolve(Form.fromHTML(this));
-      });
+      //    resolve(Form.fromHTML(this));
+      // });
    });
 }
 
@@ -117,9 +118,9 @@ class Registration {
          for (let allowedField of ALLOWED_FIELDS) {
             let values = form.getValues(allowedField);
 
-            if (values && values.length === 1) {
-               queryStanza.c(allowedField, values[0]).up();
-            }
+            // if (values && values.length === 1) {
+            //    queryStanza.c(allowedField, values[0]).up();
+            // }
          }
       }
 

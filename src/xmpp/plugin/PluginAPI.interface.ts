@@ -4,11 +4,12 @@ import { IMessage, IMessagePayload, DIRECTION } from '../Message.interface'
 import { IJID as JID } from '../JID.interface'
 import { IDiscoInfoRepository } from '../DiscoInfoRepository.interface'
 import { ILog } from '../util/Log.interface'
-import ChatWindow from '@ui/ChatWindow';
-import ContactManager from '@src/ContactManager';
-import ContactProvider from '@src/ContactProvider';
-import { IAvatar } from '@src/Avatar.interface';
-import Pipe from '@util/Pipe';
+// import ChatWindow from '@ui/ChatWindow';
+import ContactManager from '@/xmpp/ContactManager';
+import ContactProvider from '@/xmpp/ContactProvider';
+import { IAvatar } from '@/xmpp/Avatar.interface';
+import Pipe from '@/xmpp/util/Pipe';
+import {Strophe} from 'strophe.js'
 
 export interface IPluginAPI {
 
@@ -55,7 +56,7 @@ export interface IPluginAPI {
 
    getConnectionCreationDate(): Date
 
-   registerChatWindowInitializedHook(hook: (chatWindow: ChatWindow) => void)
+   registerChatWindowInitializedHook(hook: (chatWindow: any) => void) // ChatWindow
 
    registerContactProvider(source: ContactProvider)
 

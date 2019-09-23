@@ -1,6 +1,6 @@
 import Contact from '@/xmpp/Contact'
 import JID from './JID'
-import MultiUserChatWindow from './ui/MultiUserChatWindow'
+// import MultiUserChatWindow from './ui/MultiUserChatWindow'
 import PersistentMap from '@/xmpp/util/PersistentMap'
 import { Presence } from '@/xmpp/connection/AbstractConnection'
 import Form from '@/xmpp/connection/Form'
@@ -127,9 +127,9 @@ export default class MultiUserContact extends Contact {
       return this.data.get('nickname');
    }
 
-   public getChatWindow(): MultiUserChatWindow {
+   public getChatWindow(): any { // MultiUserChatWindow
       if (!this.chatWindow) {
-         this.chatWindow = new MultiUserChatWindow(this);
+         this.chatWindow = undefined; //new MultiUserChatWindow(this);
       }
 
       return this.chatWindow;

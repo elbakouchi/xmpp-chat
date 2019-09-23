@@ -7,12 +7,12 @@ import Session from './Session'
 import DSA from 'otr/lib/dsa'
 import Options from '../../Options'
 
-import dsaWebworkerFile = require('otr/build/dsa-webworker.js?path')
-import ChatWindow from '@ui/ChatWindow';
-import { ContactType, IContact } from '@src/Contact.interface';
-import Translation from '@util/Translation';
-import VerificationDialog from '@ui/dialogs/verification';
-import { DIRECTION } from '@src/Message.interface';
+const dsaWebworkerFile = require('otr/build/dsa-webworker.js?path')
+// import ChatWindow from '@ui/ChatWindow';
+import { ContactType, IContact } from '@/xmpp/Contact.interface';
+import Translation from '@/xmpp/util/Translation';
+// import VerificationDialog from '@ui/dialogs/verification';
+import { DIRECTION } from '@/xmpp/Message.interface';
 
 const WHITESPACE_TAG = '\x20\x09\x20\x20\x09\x09\x09\x09\x20\x09\x20\x09\x20\x09\x20\x20';
 
@@ -64,7 +64,7 @@ export default class OTRPlugin extends EncryptionPlugin {
       pluginAPI.addAfterReceiveMessageProcessor(this.afterReceiveMessageProcessor);
       pluginAPI.addPreSendMessageProcessor(this.preSendMessageProcessor);
 
-      pluginAPI.registerChatWindowInitializedHook((chatWindow: ChatWindow) => {
+      pluginAPI.registerChatWindowInitializedHook((chatWindow: any) => {
          let contact = chatWindow.getContact();
 
          if (contact.getType() !== ContactType.CHAT) {
@@ -147,7 +147,7 @@ export default class OTRPlugin extends EncryptionPlugin {
    public async openVerificationDialog(contact: IContact) {
       let session = await this.getSession(contact);
 
-      new VerificationDialog(contact, session);
+      // new VerificationDialog(contact, session);
    }
 
    private getSession(contact: IContact): Promise<Session> {

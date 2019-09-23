@@ -10,7 +10,7 @@ import { IMessage, DIRECTION, IMessagePayload } from './Message.interface'
 import { ContactType } from './Contact.interface'
 import PersistentMap from './util/PersistentMap'
 import UUID from './util/UUID'
-import Pipe from '@util/Pipe';
+import Pipe from '@/xmpp/util/Pipe';
 import { IJID } from './JID.interface';
 
 const ATREGEX = new RegExp('(xmpp:)?(' + CONST.REGEX.JID.source + ')(\\?[^\\s]+\\b)?', 'i');

@@ -4,7 +4,7 @@ import { Presence } from './AbstractConnection'
 import Form from './Form'
 import PEPService from './services/PEP'
 import PubSubService from './services/PubSub'
-import 'Strophe'
+import {Strophe} from 'strophe.js'
 import JingleHandler from './JingleHandler';
 
 export interface IConnection {

@@ -124,8 +124,9 @@ export default class FormField {
       return this.data.name;
    }
 
-   public getValues(): string[] {
+   public getValues(): string {
       // return this.data.values;
+      return "";
    }
 
    public toJSON() {

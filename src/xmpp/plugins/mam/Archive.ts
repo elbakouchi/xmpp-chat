@@ -7,9 +7,9 @@ import Utils from '../../util/Utils'
 import Log from '../../util/Log'
 import Translation from '../../util/Translation'
 import * as Namespace from '../../connection/xmpp/namespace'
-import { IMessage } from '@src/Message.interface';
-import { IJID } from '@src/JID.interface';
-import MultiUserContact from '@src/MultiUserContact';
+import { IMessage } from '@/xmpp/Message.interface';
+import { IJID } from '@/xmpp/JID.interface';
+import MultiUserContact from '@/xmpp/MultiUserContact';
 
 export default class Archive {
    private archiveJid: IJID;

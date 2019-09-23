@@ -2,7 +2,8 @@ import AbstractService from './AbstractService'
 import * as NS from '../xmpp/namespace'
 import Form from '@/xmpp/connection/Form'
 import { IJID } from '@/xmpp/JID.interface'
-import { $iq, Strophe } from '@/xmpp/vendor/Strophe';
+import { $iq } from '@/xmpp/vendor/Strophe';
+import {Strophe} from 'strophe.js'
 
 let baseNamespace = 'http://jabber.org/protocol/pubsub';
 

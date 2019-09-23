@@ -5,6 +5,7 @@ import { $build } from '../../../vendor/Strophe'
 import IdentityKey from '../model/IdentityKey';
 import SignedPreKey from '../model/SignedPreKey';
 import PreKey from '../model/PreKey';
+import {Strophe} from 'strophe.js'
 
 export interface IBundleObject {
    identityKey: IdentityKey,

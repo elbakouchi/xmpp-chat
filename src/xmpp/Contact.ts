@@ -11,7 +11,7 @@ import Transcript from './Transcript'
 import ChatWindowController from './ChatWindowController'
 import Avatar from './Avatar'
 import Message from './Message'
-import ChatWindow from './ui/ChatWindow';
+// import ChatWindow from './ui/ChatWindow';
 import ContactProvider from './ContactProvider';
 import DiscoInfo from './DiscoInfo';
 
@@ -90,9 +90,9 @@ export default class Contact implements IIdentifiable, IContact {
       this.data.delete();
    }
 
-   public getChatWindow(): ChatWindow {
+   public getChatWindow(): any { // ChatWindow
       if (!this.chatWindow) {
-         this.chatWindow = new ChatWindow(this);
+         this.chatWindow = undefined; //new ChatWindow(this);
       }
 
       return this.chatWindow;

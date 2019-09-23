@@ -5,9 +5,9 @@ import Address from '../vendor/Address';
 import BundleManager from './BundleManager';
 import Session from './Session';
 import EncryptedDeviceMessage from '../model/EncryptedDeviceMessage';
-import Translation from '@util/Translation';
+import Translation from '@/xmpp/util/Translation';
 import Omemo from './Omemo';
-import Log from '@util/Log';
+import Log from '@/xmpp/util/Log';
 
 const MAX_PADDING = 10;
 const PADDING_CHARACTER = '​\u200B';

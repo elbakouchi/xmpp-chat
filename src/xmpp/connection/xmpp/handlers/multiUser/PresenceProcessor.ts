@@ -1,9 +1,10 @@
 import Translation from '../../../../util/Translation'
-import Log from '@util/Log'
+import Log from '@/xmpp/util/Log'
 import MultiUserContact from '../../../../MultiUserContact'
 import MultiUserStatusCodeHandler from './StatusCodeHandler'
-import { Strophe } from '../../../../vendor/Strophe'
-import JID from '@src/JID';
+// import { Strophe } from 'strophe.js'
+import {Strophe} from 'strophe.js'
+import JID from '@/xmpp/JID';
 
 export default class MultiUserPresenceProcessor {
    private codes: string[];

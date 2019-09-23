@@ -3,10 +3,10 @@ import { IJID } from './JID.interface';
 import { IContact } from './Contact.interface';
 import Contact from './Contact';
 import Account from './Account';
-import Utils from '@util/Utils';
-import HookRepository from '@util/HookRepository';
-import Log from '@util/Log';
-import Roster from '@ui/Roster';
+import Utils from '@/xmpp/util/Utils';
+import HookRepository from '@/xmpp/util/HookRepository';
+import Log from '@/xmpp/util/Log';
+// import Roster from '@ui/Roster';
 
 const EVENT_NEW = 'new';
 const EVENT_REMOVED = 'removed';
@@ -22,13 +22,13 @@ export default class ContactManager {
 
    constructor(private account: Account) {
       this.registerNewContactHook((contact) => {
-         Roster.get().add(contact);
+         // Roster.get().add(contact);
 
          contact.getChatWindowController();
       });
 
       this.registerRemovedContactHook((contact) => {
-         Roster.get().remove(contact)
+         // Roster.get().remove(contact)
 
          contact.getChatWindowController().close();
       });

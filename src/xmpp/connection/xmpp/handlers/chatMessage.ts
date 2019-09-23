@@ -5,7 +5,8 @@ import Message from '../../../Message'
 import Utils from '../../../util/Utils'
 import Translation from '../../../util/Translation'
 import AbstractHandler from '../AbstractHandler'
-import { Strophe } from '../../../vendor/Strophe'
+// import { Strophe } from 'strophe.js'
+import {Strophe} from 'strophe.js'
 import { FUNCTION } from '../../../Notice'
 
 export default class extends AbstractHandler {

@@ -3,7 +3,7 @@ import ArrayBufferUtils from '../util/ArrayBuffer'
 import Store from '../lib/Store';
 import Address from './Address';
 import IdentityKey from '../model/IdentityKey'
-import Log from '@util/Log';
+import Log from '@/xmpp/util/Log';
 
 export const DIRECTION = {
    SENDING: 1,

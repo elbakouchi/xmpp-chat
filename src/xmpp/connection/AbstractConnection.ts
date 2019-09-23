@@ -2,7 +2,7 @@ import Message from '../Message'
 import JID from '../JID'
 import * as NS from './xmpp/namespace'
 import Log from '../util/Log'
-import { Strophe, $iq, $msg, $pres } from '../vendor/Strophe'
+import { $iq, $msg, $pres, _Strophe } from '../vendor/Strophe'
 import Account from '../Account'
 import PEPService from './services/PEP'
 import PubSubService from './services/PubSub'
@@ -10,6 +10,7 @@ import MUCService from './services/MUC'
 import RosterService from './services/Roster'
 import VcardService from './services/Vcard'
 import DiscoService from './services/Disco'
+import {Strophe} from 'strophe.js'
 
 export const STANZA_KEY = 'stanza';
 export const STANZA_IQ_KEY = 'stanzaIQ';

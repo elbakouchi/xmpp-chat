@@ -1,14 +1,14 @@
 import { AbstractPlugin } from '../../plugin/AbstractPlugin'
-import ChatWindow from '../../ui/ChatWindow'
+// import ChatWindow from '../../ui/ChatWindow'
 import Translation from '../../util/Translation'
 import PersistentMap from '../../util/PersistentMap'
 import JID from '../../JID'
 import { IJID } from '../../JID.interface'
 import * as Namespace from '../../connection/xmpp/namespace'
 import Archive from './Archive'
-import Contact from '@src/Contact';
-import PluginAPI from '@src/plugin/PluginAPI';
-import { IContact } from '@src/Contact.interface';
+import Contact from '@/xmpp/Contact';
+import PluginAPI from '@/xmpp/plugin/PluginAPI';
+import { IContact } from '@/xmpp/Contact.interface';
 
 /**
  * XEP-0313: Message Archive Management
@@ -48,11 +48,11 @@ export default class MessageArchiveManagementPlugin extends AbstractPlugin {
 
       this.queryContactRelation = new PersistentMap(pluginAPI.getStorage(), 'mam', 'query');
 
-      pluginAPI.registerChatWindowInitializedHook((chatWindow: ChatWindow, contact: Contact) => {
+      pluginAPI.registerChatWindowInitializedHook((chatWindow: any, contact: Contact) => {
          this.addLoadButtonIfEnabled(chatWindow, contact);
       });
 
-      pluginAPI.registerChatWindowClearedHook((chatWindow: ChatWindow, contact: Contact) => {
+      pluginAPI.registerChatWindowClearedHook((chatWindow: any, contact: Contact) => {
          let archiveJid = this.getArchiveJid(contact);
 
          if (this.supportCache[archiveJid.bare]) {
@@ -116,7 +116,7 @@ export default class MessageArchiveManagementPlugin extends AbstractPlugin {
       return new JID(jid.bare);
    }
 
-   private addLoadButtonIfEnabled(chatWindow: ChatWindow, contact: Contact) {
+   private addLoadButtonIfEnabled(chatWindow: any, contact: Contact) {
       let archivingJid = this.getArchiveJid(contact);
 
       this.determineServerSupport(archivingJid).then((version) => {

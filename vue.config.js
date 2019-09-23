@@ -1,3 +1,5 @@
+
+
 module.exports = {
     configureWebpack: {
         module: {
@@ -6,9 +8,11 @@ module.exports = {
             test: /.html$/,
             loader: "vue-template-loader",
             exclude: /index.html/
-            }
-        ]
-        }
+          }
+        ],
+    },
+    plugins: []
+
     }
 }
   

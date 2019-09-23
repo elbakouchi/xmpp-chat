@@ -1,7 +1,7 @@
 import JID from '../../../../JID'
 import AbstractHandler from '../../AbstractHandler'
 import { TYPE as NOTICETYPE, FUNCTION as NOTICEFUNCTION } from '../../../../Notice'
-import Log from '@util/Log';
+import Log from '@/xmpp/util/Log';
 
 export default class extends AbstractHandler {
    public processStanza(stanza: Element): boolean {

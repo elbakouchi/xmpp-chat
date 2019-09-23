@@ -1,5 +1,7 @@
 import Log from '../../util/Log'
-import { Strophe } from '../../vendor/Strophe'
+// import { Strophe } from 'strophe.js'
+import {Strophe} from 'strophe.js'
+
 
 let namespaces = {};
 

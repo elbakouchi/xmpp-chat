@@ -1,7 +1,8 @@
 import AbstractService from './AbstractService'
 import { IJID } from '../../JID.interface'
 import Form from '../Form'
-import { $pres, $iq, $msg, Strophe } from '../../vendor/Strophe'
+import { $pres, $iq, $msg } from '../../vendor/Strophe'
+import { Strophe } from 'strophe.js'
 
 //@REVIEW this will not be reflected in caps and disco
 const NS_CONFERENCE = 'jabber:x:conference';
