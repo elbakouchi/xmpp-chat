@@ -21,7 +21,7 @@
     "i18next": "^17.0.16",
     "i18next-browser-languagedetector": "^3.0.3",
     "jingle": "^3.0.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jxt": "^4.0.2",
     "jxt-xmpp": "^3.3.0",
     "jxt-xmpp-types": "^3.0.0",
